@@ -90,6 +90,7 @@ set foldnestmax=10
 
 " space toggles folds
 nnoremap <space> za
+set pastetoggle=<F2>
 
 " spellcheck
 setlocal spell spelllang=en_us
