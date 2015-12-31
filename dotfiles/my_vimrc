@@ -1,0 +1,36 @@
+set number
+filetype indent plugin on
+set hlsearch
+set smartcase
+set ignorecase
+colorscheme default 
+syntax on
+set backspace=indent,eol,start
+set softtabstop=4
+set shiftwidth=4
+set formatoptions+=w
+set tw=77
+set cursorline
+set pastetoggle=<F2>
+set mouse=a
+set ruler
+set foldenable
+set foldmethod=indent
+"markdown .md files
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.ys set ft=asm
+autocmd BufNewFile,BufRead *.ys set nosmartindent
+
+:au BufRead,BufNewFile * syntax match Search /\%<81v.\%>77v/
+:au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/
+if has("terminfo")
+  let &t_Co=16
+  let &t_AB="\<Esc>[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm"
+  let &t_AF="\<Esc>[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm"
+else
+  let &t_Co=16
+  let &t_Sf="\<Esc>[3%dm"
+  let &t_Sb="\<Esc>[4%dm"
+endif
+set list
+set listchars=tab:>-,trail:$
